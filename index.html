@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traduction Français - Polonais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f5, #ddd);
+            padding: 20px;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background: #792e2e; }
+            50% { background: #c4867b; }
+            100% { background: #be7c56; }
+        }
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .flag {
+            width: 100px;
+            height: 60px;
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        .france div:first-child { background: blue; }
+        .france div:nth-child(2) { background: white; }
+        .france div:last-child { background: red; }
+        
+        .pologne div:first-child { background: white; }
+        .pologne div:last-child { background: red; }
+        
+        .flag div {
+            flex: 1;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Permet aux colonnes de s'adapter sur les petits écrans */
+        }
+        .column {
+            width: 48%;
+        }
+        .text-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+            background: #f8f9fa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .text-block:hover {
+            transform: scale(1.1);
+            border-left: 4px solid red;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .image-container img {
+            width: 100px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media Queries pour les petits écrans (téléphones) */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .column {
+                width: 100%; /* Les colonnes deviennent pleine largeur */
+                margin-bottom: 20px;
+            }
+            .flags {
+                flex-direction: column; /* Les drapeaux s'empilent verticalement sur les petits écrans */
+                gap: 10px;
+            }
+            .text-block {
+                font-size: 14px; /* Réduit la taille du texte sur les petits écrans */
+            }
+        }
+        
+        /* Media Queries pour les très petits écrans (comme les téléphones en portrait) */
+        @media screen and (max-width: 480px) {
+            .text-block {
+                font-size: 12px; /* Réduit encore la taille du texte pour les très petits écrans */
+                padding: 8px; /* Réduit la marge intérieure des blocs de texte */
+            }
+            .flags {
+                gap: 10px;
+                justify-content: center;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('click', function(event) {
+            // Créer un conteneur pour l'image
+            let imageContainer = document.createElement("div");
+            imageContainer.classList.add("image-container");
+
+            // Ajouter l'image dans le conteneur
+            let img = document.createElement("img");
+            img.src = "./dog.webp"; // Remplace par ton image
+            imageContainer.appendChild(img);
+
+            // Placer le conteneur au point de clic
+            imageContainer.style.left = `${event.pageX - 50}px`; // Centrer l'image
+            imageContainer.style.top = `${event.pageY - 50}px`; // Centrer l'image
+
+            // Ajouter le conteneur à l'écran
+            document.body.appendChild(imageContainer);
+
+            // Appliquer l'animation pour afficher l'image
+            setTimeout(() => {
+                imageContainer.style.opacity = "1";
+                imageContainer.style.transform = "scale(1)";
+            }, 10);
+
+            // Faire disparaître l'image après 1 seconde
+            setTimeout(() => {
+                imageContainer.style.opacity = "0";
+                imageContainer.style.transform = "scale(0)";
+            }, 1000);
+
+            // Supprimer l'image après l'animation
+            setTimeout(() => {
+                imageContainer.remove();
+            }, 1500); // Après 1.5 secondes (quand l'animation est terminée)
+        });
+    </script>
+</head>
+<body>
+    <h1>Traduction Français - Polonais</h1>
+    
+    <div class="flags">
+        <div class="flag france">
+            <div></div><div></div><div></div>
+        </div>
+        <div class="flag pologne">
+            <div></div><div></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="column">
+            <h2>Français</h2>
+            <div class="text-block">Bonjour, comment allez-vous ?</div>
+            <div class="text-block">Merci beaucoup !</div>
+            <div class="text-block">Commment ça va ?</div>
+            <div class="text-block">Bien sur</div>
+            <div class="text-block">how are you so perfect like that ?</div>
+            <div class="text-block">De rien</div>
+            <div class="text-block">fatigué</div>
+            <div class="text-block">Quoi ?</div>
+            <div class="text-block">Bonjour je m'appelle Luka</div>
+            <div class="text-block">je ne comprends pas</div>
+            <div class="text-block">Fou</div>
+            <div class="text-block">moi aussi</div>
+            <div class="text-block">parfait</div>
+            <div class="text-block">Tu es parfaite</div>
+            <div class="text-block">On va ou ?</div>
+            <div class="text-block">Moi aussi je te veux beaucoup</div>
+            <div class="text-block">Ma faute</div>
+            <div class="text-block">Je suis polonais</div>
+            <div class="text-block">C'était comment ta journée ?</div>
+            <div class="text-block">Viens vers moi</div>
+        </div>
+        <div class="column">
+            <h2>Polonais</h2>
+            <div class="text-block">Dzień dobry, jak się masz?</div>
+            <div class="text-block">Dziękuję bardzo!</div>
+            <div class="text-block">Jak się masz ? </div>
+            <div class="text-block">Oczywiście</div>
+            <div class="text-block">Jak to możliwe, że jesteś taki idealny?</div>
+            <div class="text-block">Bez wartości</div>
+            <div class="text-block">zmęczenie</div>
+            <div class="text-block">Co</div>
+            <div class="text-block">Cześć, mam na imię Łukasz</div>
+            <div class="text-block">Nie rozumiem</div>
+            <div class="text-block">szalony</div>
+            <div class="text-block">Ja też</div>
+            <div class="text-block">Doskonały</div>
+            <div class="text-block">jesteś idealny</div>
+            <div class="text-block">Gdzie idziemy?</div>
+            <div class="text-block">Ja też bardzo cię pragnę</div>
+            <div class="text-block">Moja wina</div>
+            <div class="text-block">Jestem Polakiem</div>
+            <div class="text-block">Jak ci minął dzień ?</div>
+            <div class="text-block">Przyjdź do mnie</div>
+        </div>
+    </div>
+</body>
+</html>
